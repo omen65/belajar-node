@@ -1,0 +1,29 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>
+                Detail Contact
+            </h2>
+            <% if (!contact) { %>
+            <div class="alert alert-danger" role="alert">
+                Contact Not Found <a href="/contact" class="alert-link">Back</a>. to all contact.
+            </div>
+            <% }else{ %>
+            <div class="card" style="width: 300px;">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= contact.nama %>
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-mutes"><%= contact.nohp %></h6>
+                    <p class="card-text">
+                        <%= contact.email %>
+                    </p>
+                    <a href="/contact/edit/<%= contact.nama %>" class="btn btn-success badge">Edit</a>
+                    <a href="/contact/delete/<%= contact.nama %>" class="btn btn-danger badge" >Hapus</a>
+                    <a href="/contact" class="d-block mt-3">&laquo; Back</a>
+                </div>
+            </div>
+            <% } %> 
+        </div>
+    </div>
+</div>
